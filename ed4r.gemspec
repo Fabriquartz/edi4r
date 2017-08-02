@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'edi4r'
-  s.version     = '0.0.0'
+  s.version     = '0.9.6.2'
   s.date        = '2017-08-02'
   s.summary     = "edi4r"
   s.description = "edi4r gem with more definitions"
