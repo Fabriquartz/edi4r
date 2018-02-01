@@ -649,27 +649,27 @@ module EDI::E
       if not ['E'].include?(@syntax) # More anticipated here
         raise "#{@syntax} - syntax not supported!"
       end
-      case @version
-      when 1
-        if @charset != 'UNOA'
-          raise "Syntax version 1 permits only charset UNOA!"
-        end
-      when 2
-        if not @charset =~ /UNO[AB]/
-          raise "Syntax version 2 permits only charsets UNOA, UNOB!"
-        end
-      when 3
-        if not @charset =~ /UNO[A-F]/
-          raise "Syntax version 3 permits only charsets UNOA...UNOF!"
-        end
-      when 4
-        # A,B: ISO 646 subsets, C-K: ISO-8859-x, X: ISO 2022, Y: ISO 10646-1
-        if not @charset =~ /UNO[A-KXY]/
-          raise "Syntax version 4 permits only charsets UNOA...UNOZ!"
-        end
-      else
-        raise "#{@version} - no such syntax version!"
-      end
+    #  case @version
+    #  when 1
+    #    if @charset != 'UNOA'
+    #      raise "Syntax version 1 permits only charset UNOA!"
+    #    end
+    #  when 2
+    #    if not @charset =~ /UNO[AB]/
+    #      raise "Syntax version 2 permits only charsets UNOA, UNOB!"
+    #    end
+    #  when 3
+    #    if not @charset =~ /UNO[A-F]/
+    #      raise "Syntax version 3 permits only charsets UNOA...UNOF!"
+    #    end
+    #  when 4
+    #    # A,B: ISO 646 subsets, C-K: ISO-8859-x, X: ISO 2022, Y: ISO 10646-1
+    #    if not @charset =~ /UNO[A-KXY]/
+    #      raise "Syntax version 4 permits only charsets UNOA...UNOZ!"
+    #    end
+    #  else
+    #    raise "#{@version} - no such syntax version!"
+    #  end
       if @e_iedi and @version != 4
         raise "Inconsistent parameters - I-EDI requires syntax version 4!"
       end
